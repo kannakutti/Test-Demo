@@ -19,7 +19,7 @@ import seaborn as sns
 # In[20]:
 
 
-Patient_Data_df = pd.read_csv("/tmp/PB_Data.csv")
+Patient_Data_df = pd.read_csv("/PB_Data.csv")
 
 
 # In[21]:
