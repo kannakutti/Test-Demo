@@ -183,7 +183,7 @@ plt.title('Confusion matrix', y=1.1)
 plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 
-print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
+#print("Accuracy:",metrics.accuracy_score(y_test, y_pred))
 #print("Precision:",metrics.precision_score(y_test, y_pred))
 #print("Recall:",metrics.recall_score(y_test, y_pred))
 
@@ -196,7 +196,8 @@ gnb.fit(X_train, y_train)
 y_nb_pred = gnb.predict(X_test)
 
 #Model Accuracy, how often is the classifier correct?
-print("Accuracy:",metrics.accuracy_score(y_test, y_nb_pred))
+#print("Accuracy:",metrics.accuracy_score(y_test, y_nb_pred))
+metrics.accuracy_score(y_test, y_nb_pred).to_csv("ok1")
 
 from sklearn.metrics import classification_report
-print(classification_report(y_nb_pred,y_test))
+#print(classification_report(y_nb_pred,y_test))
