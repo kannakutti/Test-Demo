@@ -50,11 +50,11 @@ Patient_Data_df.WaitingDays = Patient_Data_df.WaitingDays.astype('int64')
 Patient_Data_df['AppointmentTime'].head()
 
 #Validating whether there are any duplicated rows
-Patient_Data_df[Patient_Data_df["PatientId"].duplicated()]
+#Patient_Data_df[Patient_Data_df["PatientId"].duplicated()]
 #There are no duplicated rows
 
 #Verifying if same patientId is given to the same patient or different patients
-Patient_Data_df[Patient_Data_df.PatientId == 55639]
+#Patient_Data_df[Patient_Data_df.PatientId == 55639]
 # It is evident that same patientId is given to multiple patients. Hence, we should also consider First Name and Last Name attributes for the model training
 
 #We could see from the above results that Appointment time is unique. Hence checking how many unique values the AppointmentTime
@@ -158,6 +158,10 @@ logreg.fit(X_train,y_train)
 
 #
 y_pred=logreg.predict(X_test)
+
+my_df = pd.DataFrame()
+my_df["Predicted Outcome"]=y_train
+my_df.to_csv("Prediction.csv")
 
 # import the metrics class
 from sklearn import metrics
